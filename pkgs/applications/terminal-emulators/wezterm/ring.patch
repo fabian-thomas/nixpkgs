@@ -1,0 +1,23 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index b41c47094..dfe1c6836 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -4236,8 +4236,7 @@ dependencies = [
+ [[package]]
+ name = "ring"
+ version = "0.16.20"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "3053cf52e236a3ed746dfc745aa9cacf1b791d846bdaf412f60a8d7d6e17c8fc"
++source = "git+https://github.com/felixonmars/ring?branch=0.16.20#80697f42ff68b7e2aacfd2179be29fd2f2d251d5"
+ dependencies = [
+  "cc",
+  "libc",
+diff --git a/Cargo.toml b/Cargo.toml
+index 58d114286..65f16a7db 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -29,3 +29,4 @@ opt-level = 3
+ [patch.crates-io]
+ xcb = {git="https://github.com/rust-x-bindings/rust-xcb", rev="dbdaa01c178c6fbe68bd51b7ad44c08172181083"} # waiting on a release with https://github.com/rust-x-bindings/rust-xcb/pull/230
+ 
++ring = { git = 'https://github.com/felixonmars/ring', branch = '0.16.20' }
