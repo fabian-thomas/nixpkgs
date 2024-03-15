@@ -6,6 +6,7 @@
 let
   cfg = config.xdg.portal.termfilechooser;
   settingsFormat = pkgs.formats.ini { };
+  # TODO: dont generate config if there is nothing specially set
   configFile = settingsFormat.generate "xdg-desktop-portal-termfilechooser.ini" cfg.settings;
 in
 {
@@ -81,7 +82,7 @@ in
       serviceConfig.ExecStart = [
         # Empty ExecStart value to override the field
         ""
-        "${cfg.package}/libexec/xdg-desktop-portal-termfilechooser --config=${configFile} --loglevel=${cfg.logLevel}"
+        "${cfg.package}/libexec/xdg-desktop-portal-termfilechooser --loglevel=${cfg.logLevel}"
       ];
     };
   };
