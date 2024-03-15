@@ -72,11 +72,11 @@ stdenv.mkDerivation {
       })
   ];
 
-  postPatch = ''
-    # Allow using ranger out of the box without any configuration.
-    substituteInPlace src/core/config.c \
-      --replace-fail '"/usr/share/xdg-desktop-portal-termfilechooser/ranger-wrapper.sh"' '"${placeholder "out"}/share/xdg-desktop-portal-termfilechooser/ranger-wrapper.sh"'
-  '';
+  #postPatch = ''
+  #  # Allow using ranger out of the box without any configuration.
+  #  substituteInPlace src/core/config.c \
+  #    --replace-fail '"/usr/share/xdg-desktop-portal-termfilechooser/ranger-wrapper.sh"' '"${placeholder "out"}/share/xdg-desktop-portal-termfilechooser/ranger-wrapper.sh"'
+  #'';
 
   meta = with lib; {
     homepage = "https://github.com/GermainZ/xdg-desktop-portal-termfilechooser";
